@@ -121,7 +121,7 @@ const MetadataForm = ({ defaultValues, onSubmit }: MetadataFormProps) => {
         <Avatar src={watch("banner")} size="lg" ignoreFallback />
       </Flex>
       <FormControl isInvalid={!!errors.nip05}>
-        <FormLabel>NIP-05 ID</FormLabel>
+        <FormLabel>NIP-05 ID...</FormLabel>
         <Input
           type="email"
           placeholder="user@domain.com"
