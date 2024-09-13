@@ -13,6 +13,7 @@ COPY . .
 
 ENV VITE_COMMIT_HASH=""
 ENV VITE_APP_VERSION="custom"
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 RUN yarn build
 
 FROM nginx:stable-alpine-slim AS main
