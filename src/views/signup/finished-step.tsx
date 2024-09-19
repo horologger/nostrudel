@@ -8,6 +8,7 @@ import { containerProps } from "./common";
 import { UserFollowButton } from "../../components/user/user-follow-button";
 import { Kind0ParsedContent } from "../../helpers/nostr/user-metadata";
 import UserDnsIdentity from "../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../components/user/user-did-identity";
 
 type TrendingApi = {
   profiles: {

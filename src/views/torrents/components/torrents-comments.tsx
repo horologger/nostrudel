@@ -23,6 +23,7 @@ import useClientSideMuteFilter from "../../../hooks/use-client-side-mute-filter"
 import UserAvatarLink from "../../../components/user/user-avatar-link";
 import UserLink from "../../../components/user/user-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import Timestamp from "../../../components/timestamp";
 import Minus from "../../../components/icons/minus";
 import Expand01 from "../../../components/icons/expand-01";

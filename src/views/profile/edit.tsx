@@ -20,6 +20,7 @@ import { useReadRelays } from "../../hooks/use-client-relays";
 import useCurrentAccount from "../../hooks/use-current-account";
 import useUserMetadata from "../../hooks/use-user-metadata";
 import dnsIdentityService from "../../services/dns-identity";
+import didIdentityService from "../../services/did-identity";
 import { DraftNostrEvent } from "../../types/nostr-event";
 import lnurlMetadataService from "../../services/lnurl-metadata";
 import VerticalPageLayout from "../../components/vertical-page-layout";
@@ -41,6 +42,7 @@ type FormData = {
   about?: string;
   website?: string;
   nip05?: string;
+  nip05x?: string;
   lightningAddress?: string;
 };
 
@@ -121,7 +123,7 @@ const MetadataForm = ({ defaultValues, onSubmit }: MetadataFormProps) => {
         <Avatar src={watch("banner")} size="lg" ignoreFallback />
       </Flex>
       <FormControl isInvalid={!!errors.nip05}>
-        <FormLabel>NIP-05 ID..</FormLabel>
+        <FormLabel>NIP-05 ID+_+</FormLabel>
         <Input
           type="email"
           placeholder="user@domain.com"
@@ -143,6 +145,29 @@ const MetadataForm = ({ defaultValues, onSubmit }: MetadataFormProps) => {
           })}
         />
         <FormErrorMessage>{errors.nip05?.message}</FormErrorMessage>
+      </FormControl>
+      <FormControl isInvalid={!!errors.nip05x}>
+        <FormLabel>NIP-05 IDx</FormLabel>
+        <Input
+          type="email"
+          placeholder="user@domain.com"
+          isDisabled={isSubmitting}
+          {...register("nip05x", {
+            minLength: 5,
+            validate: async (address) => {
+              if (!address) return true;
+              if (!address.includes("@")) return "Invalid address";
+              try {
+                const id = await dnsIdentityService.fetchIdentity(address);
+                if (!id) return "Cant find NIP-05 IDx";
+              } catch (e) {
+                return "Failed to fetch ID";
+              }
+              return true;
+            },
+          })}
+        />
+        <FormErrorMessage>{errors.nip05x?.message}</FormErrorMessage>
       </FormControl>
       <FormControl isInvalid={!!errors.website}>
         <FormLabel>Website</FormLabel>
@@ -213,6 +238,7 @@ export const ProfileEditView = () => {
       about: metadata?.about,
       website: metadata?.website,
       nip05: metadata?.nip05,
+      nip05x: metadata?.nip05x,
       lightningAddress: metadata?.lud16 || metadata?.lud06,
     }),
     [metadata],
@@ -228,6 +254,7 @@ export const ProfileEditView = () => {
     if (data.about) newMetadata.about = data.about;
     if (data.website) newMetadata.website = data.website;
     if (data.nip05) newMetadata.nip05 = data.nip05;
+    if (data.nip05x) newMetadata.nip05x = data.nip05x;
 
     if (data.lightningAddress) {
       if (isLNURL(data.lightningAddress)) {

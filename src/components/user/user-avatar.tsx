@@ -10,6 +10,7 @@ import useAppSettings from "../../hooks/use-app-settings";
 import useCurrentAccount from "../../hooks/use-current-account";
 import { buildImageProxyURL } from "../../helpers/image";
 import UserDnsIdentityIcon from "./user-dns-identity-icon";
+import UserDIDIdentityIcon from "./user-did-identity-icon";
 import styled from "@emotion/styled";
 import useUserMuteList from "../../hooks/use-user-mute-list";
 

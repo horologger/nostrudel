@@ -2,6 +2,7 @@ import { Code, Flex, Heading, Link, Text } from "@chakra-ui/react";
 import BackButton from "../../../components/router/back-button";
 import useCurrentAccount from "../../../hooks/use-current-account";
 import { useUserDNSIdentity } from "../../../hooks/use-user-dns-identity";
+import { useUserDIDIdentity } from "../../../hooks/use-user-did-identity";
 import { Link as RouterLink } from "react-router-dom";
 
 import { RelayFavicon } from "../../../components/relay-favicon";

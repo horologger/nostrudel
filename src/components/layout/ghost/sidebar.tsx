@@ -5,6 +5,7 @@ import GhostTimeline from "./timeline";
 import UserAvatar from "../../user/user-avatar";
 import UserLink from "../../user/user-link";
 import UserDnsIdentity from "../../user/user-dns-identity";
+import UserDIDIdentity from "../../user/user-did-identity";
 import accountService from "../../../services/account";
 
 export default function GhostSideBar({ ...props }: Omit<FlexProps, "children">) {

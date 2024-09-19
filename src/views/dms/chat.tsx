@@ -14,6 +14,7 @@ import IntersectionObserverProvider from "../../providers/local/intersection-obs
 import { useTimelineCurserIntersectionCallback } from "../../hooks/use-timeline-cursor-intersection-callback";
 import TimelineActionAndStatus from "../../components/timeline/timeline-action-and-status";
 import UserDnsIdentity from "../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../components/user/user-did-identity";
 import SendMessageForm from "./components/send-message-form";
 import { groupMessages } from "../../helpers/nostr/dms";
 import ThreadDrawer from "./components/thread-drawer";

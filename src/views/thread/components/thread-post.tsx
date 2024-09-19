@@ -14,6 +14,7 @@ import Expand01 from "../../../components/icons/expand-01";
 import Minus from "../../../components/icons/minus";
 import { useBreakpointValue } from "../../../providers/global/breakpoint-provider";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import useAppSettings from "../../../hooks/use-app-settings";
 import useThreadColorLevelProps from "../../../hooks/use-thread-color-level-props";
 import POWIcon from "../../../components/pow/pow-icon";

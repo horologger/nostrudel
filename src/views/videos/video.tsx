@@ -14,6 +14,7 @@ import useReplaceableEvent from "../../hooks/use-replaceable-event";
 import UserAvatarLink from "../../components/user/user-avatar-link";
 import UserLink from "../../components/user/user-link";
 import UserDnsIdentity from "../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../components/user/user-did-identity";
 import { UserFollowButton } from "../../components/user/user-follow-button";
 import VideoMenu from "./components/video-menu";
 import SimpleLikeButton from "../../components/event-reactions/simple-like-button";

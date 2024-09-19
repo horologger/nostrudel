@@ -19,6 +19,7 @@ import UserAvatar from "../../../components/user/user-avatar";
 import HoverLinkOverlay from "../../../components/hover-link-overlay";
 import UserName from "../../../components/user/user-name";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import Timestamp from "../../../components/timestamp";
 import { useKind4Decrypt } from "../../../hooks/use-kind4-decryption";
 import decryptionCacheService from "../../../services/decryption-cache";

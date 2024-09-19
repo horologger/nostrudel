@@ -5,6 +5,7 @@ import { NostrEvent } from "nostr-tools";
 import Timestamp from "../timestamp";
 import UserLink from "../user/user-link";
 import UserDnsIdentity from "../user/user-dns-identity";
+import UserDIDIdentity from "../user/user-did-identity";
 import useEventReactions from "../../hooks/use-event-reactions";
 import EventReactionButtons from "../event-reactions/event-reactions";
 import { IconThreadButton } from "./thread-button";

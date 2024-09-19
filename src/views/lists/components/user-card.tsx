@@ -5,6 +5,7 @@ import { nip19 } from "nostr-tools";
 import useUserMetadata from "../../../hooks/use-user-metadata";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import { NostrEvent } from "../../../types/nostr-event";
 import useAsyncErrorHandler from "../../../hooks/use-async-error-handler";
 import { listRemovePerson } from "../../../helpers/nostr/lists";

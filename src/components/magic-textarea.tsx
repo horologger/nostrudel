@@ -14,6 +14,7 @@ import { Emoji, useContextEmojis } from "../providers/global/emoji-provider";
 import { useUserSearchDirectoryContext } from "../providers/global/user-directory-provider";
 import UserAvatar from "./user/user-avatar";
 import UserDnsIdentity from "./user/user-dns-identity";
+import UserDIDIdentity from "./user/user-did-identity";
 import { useWebOfTrust } from "../providers/global/web-of-trust-provider";
 
 export type PeopleToken = { pubkey: string; names: string[] };

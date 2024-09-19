@@ -17,6 +17,7 @@ import RelayControl from "./relay-control";
 import useUserMailboxes from "../../../hooks/use-user-mailboxes";
 import { getRelaysFromExt } from "../../../helpers/nip07";
 import { useUserDNSIdentity } from "../../../hooks/use-user-dns-identity";
+import { useUserDIDIdentity } from "../../../hooks/use-user-did-identity";
 import useUserContactRelays from "../../../hooks/use-user-contact-relays";
 import SelectRelaySet from "./select-relay-set";
 import { safeRelayUrls } from "../../../helpers/relay";

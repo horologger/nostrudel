@@ -4,6 +4,7 @@ import { Link as RouterLink } from "react-router-dom";
 import UserAvatarLink from "../../../components/user/user-avatar-link";
 import UserLink from "../../../components/user/user-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import StarRating from "../../../components/star-rating";
 import { safeJson } from "../../../helpers/parse";
 import { NostrEvent } from "../../../types/nostr-event";

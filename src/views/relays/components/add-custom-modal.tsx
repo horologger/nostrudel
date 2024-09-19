@@ -26,6 +26,7 @@ import { useRelayInfo } from "../../../hooks/use-relay-info";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserLink from "../../../components/user/user-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import { CodeIcon } from "../../../components/icons";
 import { Metadata } from "./relay-card";
 import { safeRelayUrl } from "../../../helpers/relay";

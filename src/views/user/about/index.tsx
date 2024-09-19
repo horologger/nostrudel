@@ -38,6 +38,7 @@ import {
 import { CopyIconButton } from "../../../components/copy-icon-button";
 import { QrIconButton } from "../components/share-qr-button";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import UserAvatar from "../../../components/user/user-avatar";
 import { ChatIcon } from "@chakra-ui/icons";
 import { UserFollowButton } from "../../../components/user/user-follow-button";
@@ -52,7 +53,9 @@ import UserJoinedChanneled from "./user-joined-channels";
 import { getTextColor } from "../../../helpers/color";
 import UserName from "../../../components/user/user-name";
 import { useUserDNSIdentity } from "../../../hooks/use-user-dns-identity";
+import { useUserDIDIdentity } from "../../../hooks/use-user-did-identity";
 import UserDnsIdentityIcon from "../../../components/user/user-dns-identity-icon";
+import UserDIDIdentityIcon from "../../../components/user/user-did-identity-icon";
 
 function buildDescriptionContent(description: string) {
   let content: EmbedableContent = [description.trim()];
@@ -99,6 +102,42 @@ function DNSIdentityWarning({ pubkey }: { pubkey: string }) {
     );
 }
 
+function DNSIdentityWarningX({ pubkey }: { pubkey: string }) {
+  const metadata = useUserMetadata(pubkey);
+  const dnsIdentity = useUserDNSIdentity(pubkey);
+  const parsedNip05 = metadata?.nip05x ? parseAddress(metadata.nip05x) : undefined;
+  const nip05URL = parsedNip05
+    ? `https://${parsedNip05.domain}/.well-known/nostr.json?name=${parsedNip05.name}`
+    : undefined;
+
+  if (dnsIdentity === undefined)
+    return (
+      <Text color="yellow.500">
+        Unable to check DNS identity due to CORS error{" "}
+        {nip05URL && (
+          <Link
+            color="blue.500"
+            href={`https://cors-test.codehappy.dev/?url=${encodeURIComponent(nip05URL)}&method=get`}
+            isExternal
+          >
+            Test
+            <ExternalLinkIcon ml="1" />
+          </Link>
+        )}
+      </Text>
+    );
+  else if (dnsIdentity.exists === false) return <Text color="red.500">Unable to find nostr.json file</Text>;
+  else if (dnsIdentity.pubkey === undefined)
+    return <Text color="red.500">Unable to find DNS Identity in nostr.json file</Text>;
+  else if (dnsIdentity.pubkey === pubkey) return null;
+  else
+    return (
+      <Text color="red.500" fontWeight="bold">
+        Invalid DNS Identity!
+      </Text>
+    );
+}
+
 export default function UserAboutTab() {
   const expanded = useDisclosure();
   const { pubkey } = useOutletContext() as { pubkey: string };
@@ -112,8 +151,12 @@ export default function UserAboutTab() {
 
   const aboutContent = metadata?.about && buildDescriptionContent(metadata?.about);
   const parsedNip05 = metadata?.nip05 ? parseAddress(metadata.nip05) : undefined;
+  const parsedNip05x = metadata?.nip05x ? parseAddress(metadata.nip05x) : undefined;
   const nip05URL = parsedNip05
     ? `https://${parsedNip05.domain}/.well-known/nostr.json?name=${parsedNip05.name}`
+    : undefined;
+  const nip05xURL = parsedNip05x
+    ? `https://${parsedNip05x.domain}/.well-known/nostr.json?name=${parsedNip05x.name}`
     : undefined;
 
   return (
@@ -213,6 +256,17 @@ export default function UserAboutTab() {
               </Link>
             </Flex>
             <DNSIdentityWarning pubkey={pubkey} />
+          </Box>
+        )}
+        {nip05xURL && (
+          <Box>
+            <Flex gap="2">
+              <VerifiedIcon boxSize="1.2em" />
+              <Link href={nip05xURL} isExternal>
+                <UserDIDIdentity pubkey={pubkey} />
+              </Link>
+            </Flex>
+            <DNSIdentityWarningX pubkey={pubkey} />
           </Box>
         )}
         {metadata?.website && (

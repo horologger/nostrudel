@@ -4,6 +4,7 @@ import { useNavigate, Link as RouterLink } from "react-router-dom";
 import { useDebounce } from "react-use";
 
 import dnsIdentityService, { DnsIdentity } from "../../../services/dns-identity";
+import didIdentityService, { DIDIdentity } from "../../../services/did-identity";
 import { CheckIcon } from "../../../components/icons";
 import nostrConnectService from "../../../services/nostr-connect";
 import accountService from "../../../services/account";

@@ -12,6 +12,7 @@ import { useTimelineCurserIntersectionCallback } from "../../../hooks/use-timeli
 import TimelineActionAndStatus from "../../../components/timeline/timeline-action-and-status";
 import UserAvatarLink from "../../../components/user/user-avatar-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import HoverLinkOverlay from "../../../components/hover-link-overlay";
 import UserLink from "../../../components/user/user-link";
 import { getRelaysFromList } from "../../../helpers/nostr/lists";

@@ -9,6 +9,7 @@ import { EmbedEventPointer } from "../embed-event";
 import UserAvatarLink from "../user/user-avatar-link";
 import UserLink from "../user/user-link";
 import UserDnsIdentity from "../user/user-dns-identity";
+import UserDIDIdentity from "../user/user-did-identity";
 
 function EventTag({ tag }: { tag: Tag }) {
   const expand = useDisclosure();

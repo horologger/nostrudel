@@ -26,6 +26,7 @@ import UserLink from "../../../components/user/user-link";
 import HoverLinkOverlay from "../../../components/hover-link-overlay";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import ChannelJoinButton from "./channel-join-button";
 import { ExternalLinkIcon } from "../../../components/icons";
 import { CHANNELS_LIST_KIND } from "../../../helpers/nostr/lists";

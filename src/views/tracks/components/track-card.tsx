@@ -11,6 +11,7 @@ import TrackStemstrButton from "./track-stemstr-button";
 import TrackDownloadButton from "./track-download-button";
 import TrackPlayer from "./track-player";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import TrackMenu from "./track-menu";
 import QuoteEventButton from "../../../components/note/quote-event-button";
 import NoteZapButton from "../../../components/note/note-zap-button";

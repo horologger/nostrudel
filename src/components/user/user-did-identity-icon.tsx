@@ -4,9 +4,9 @@ import { IconProps } from "@chakra-ui/react";
 import useDnsIdentity from "../../hooks/use-dns-identity";
 import useDIDIdentity from "../../hooks/use-did-identity";
 import useUserMetadata from "../../hooks/use-user-metadata";
-import { VerificationFailed, VerificationMissing, VerifiedIcon } from "../icons";
+import { VerificationFailed, VerificationMissing, VerifiedIconDID } from "../icons";
 
-const UserDnsIdentityIcon = forwardRef<SVGSVGElement, { pubkey: string } & IconProps>(({ pubkey, ...props }, ref) => {
+const UserDIDIdentityIcon = forwardRef<SVGSVGElement, { pubkey: string } & IconProps>(({ pubkey, ...props }, ref) => {
   const metadata = useUserMetadata(pubkey);
   const identity = useDnsIdentity(metadata?.nip05);
 
@@ -17,9 +17,9 @@ const UserDnsIdentityIcon = forwardRef<SVGSVGElement, { pubkey: string } & IconP
   } else if (identity.exists === false || identity.pubkey === undefined) {
     return <VerificationMissing color="red.500" {...props} ref={ref} />;
   } else if (pubkey === identity.pubkey) {
-    return <VerifiedIcon color="purple.500" {...props} ref={ref} />;
+    return <VerifiedIconDID color="orange.500" {...props} ref={ref} />;
   } else {
     return <VerificationFailed color="red.500" {...props} ref={ref} />;
   }
 });
-export default UserDnsIdentityIcon;
+export default UserDIDIdentityIcon;

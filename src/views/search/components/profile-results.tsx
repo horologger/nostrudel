@@ -6,6 +6,7 @@ import { Link as RouterLink } from "react-router-dom";
 
 import UserAvatar from "../../../components/user/user-avatar";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import trustedUserStatsService from "../../../services/trusted-user-stats";
 import { readablizeSats } from "../../../helpers/bolt11";
 import replaceableEventsService from "../../../services/replaceable-events";

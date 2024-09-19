@@ -16,6 +16,7 @@ export type Kind0ParsedContent = {
   lud16?: string;
   lud06?: string;
   nip05?: string;
+  nip05x?: string;
 };
 
 export function parseMetadataContent(event: NostrEvent): Kind0ParsedContent {

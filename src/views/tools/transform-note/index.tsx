@@ -6,6 +6,7 @@ import useSingleEvent from "../../../hooks/use-single-event";
 import { NoteTranslationsPage } from "./translation";
 import UserAvatarLink from "../../../components/user/user-avatar-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import UserLink from "../../../components/user/user-link";
 import NoteTextToSpeechPage from "./text-to-speech";
 import useRouteSearchValue from "../../../hooks/use-route-search-value";

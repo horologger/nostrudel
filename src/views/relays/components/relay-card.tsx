@@ -28,6 +28,7 @@ import { CodeIcon } from "../../../components/icons";
 import UserLink from "../../../components/user/user-link";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import RawJson from "../../../components/debug-modal/raw-json";
 import useRelayStats from "../../../hooks/use-relay-stats";
 import { getNetwork } from "../../../helpers/nostr/relay-stats";

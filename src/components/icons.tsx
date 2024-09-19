@@ -42,6 +42,7 @@ import Map01 from "./icons/map-01";
 import PlayCircle from "./icons/play-circle";
 import StopCircle from "./icons/stop-circle";
 import CheckVerified01 from "./icons/check-verified-01";
+import CheckVerified04 from "./icons/check-verified-04";
 import AlertOctagon from "./icons/alert-octagon";
 import AlertTriangle from "./icons/alert-triangle";
 import Key01 from "./icons/key-01";
@@ -114,6 +115,7 @@ export const QuoteEventIcon = createIcon({
 });
 
 export const VerifiedIcon = CheckVerified01;
+export const VerifiedIconDID = CheckVerified04;
 export const VerificationFailed = AlertOctagon;
 
 export const VerificationMissing = createIcon({

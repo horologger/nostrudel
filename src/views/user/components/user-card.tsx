@@ -2,6 +2,7 @@ import { memo } from "react";
 import { Flex, FlexProps } from "@chakra-ui/react";
 
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import { UserFollowButton } from "../../../components/user/user-follow-button";
 import UserLink from "../../../components/user/user-link";
 import UserAvatarLink from "../../../components/user/user-avatar-link";

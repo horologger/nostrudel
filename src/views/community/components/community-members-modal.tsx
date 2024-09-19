@@ -24,6 +24,7 @@ import { useTimelineCurserIntersectionCallback } from "../../../hooks/use-timeli
 import TimelineActionAndStatus from "../../../components/timeline/timeline-action-and-status";
 import UserLink from "../../../components/user/user-link";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import UserAvatarLink from "../../../components/user/user-avatar-link";
 
 function UserCard({ pubkey }: { pubkey: string }) {

@@ -17,6 +17,7 @@ import useCurrentAccount from "../../../hooks/use-current-account";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserName from "../../../components/user/user-name";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import accountService from "../../../services/account";
 import AccountTypeBadge from "../../../components/account-info-badge";
 import useSubject from "../../../hooks/use-subject";

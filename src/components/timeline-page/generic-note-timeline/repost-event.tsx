@@ -7,6 +7,7 @@ import { NostrEvent } from "../../../types/nostr-event";
 import TimelineNote from "../../note/timeline-note";
 import UserAvatar from "../../user/user-avatar";
 import UserDnsIdentity from "../../user/user-dns-identity";
+import UserDIDIdentity from "../../user/user-did-identity";
 import UserLink from "../../user/user-link";
 import { TrustProvider } from "../../../providers/local/trust-provider";
 import useSingleEvent from "../../../hooks/use-single-event";

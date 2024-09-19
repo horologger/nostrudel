@@ -9,6 +9,7 @@ import Database01 from "../../components/icons/database-01";
 import { AtIcon, RelayIcon, SearchIcon } from "../../components/icons";
 import Mail02 from "../../components/icons/mail-02";
 import { useUserDNSIdentity } from "../../hooks/use-user-dns-identity";
+import { useUserDIDIdentity } from "../../hooks/use-user-did-identity";
 import useUserContactRelays from "../../hooks/use-user-contact-relays";
 import UserSquare from "../../components/icons/user-square";
 import Image01 from "../../components/icons/image-01";

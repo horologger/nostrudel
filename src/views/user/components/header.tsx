@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { EditIcon, GhostIcon } from "../../../components/icons";
 import UserAvatar from "../../../components/user/user-avatar";
 import UserDnsIdentity from "../../../components/user/user-dns-identity";
+import UserDIDIdentity from "../../../components/user/user-did-identity";
 import useCurrentAccount from "../../../hooks/use-current-account";
 import useUserMetadata from "../../../hooks/use-user-metadata";
 import { UserProfileMenu } from "./user-profile-menu";
